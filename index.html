@@ -1,1 +1,231 @@
-<head><link rel="stylesheet" href="style.css"></head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- RESET ---------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:#111;
+      background:linear-gradient(180deg,#fafafa 0%, #ffffff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#ef6b9a,#6b8ef1);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-family:'Playfair Display',serif}
+    .name{font-weight:700}
+    nav a{margin-left:18px;color:#333;text-decoration:none;font-weight:600}
+
+    /* ---------- HERO ---------- */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:36px}
+    .hero-left h1{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:10px}
+    .hero-left p{color:#555}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:#111;color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #ddd}
+
+    .stats{background:#fff;border-radius:14px;padding:18px;box-shadow:0 8px 20px rgba(15,15,15,0.04)}
+    .stats .row{display:flex;justify-content:space-between;margin-bottom:8px}
+    .stat-num{font-weight:800;font-size:20px}
+    .stat-label{color:#666;font-size:13px}
+
+    /* ---------- PROJECT GRID ---------- */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+    .project{background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(15,15,15,0.05);transition:transform .28s ease,box-shadow .28s ease}
+    .project:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(15,15,15,0.08)}
+    .project img{width:100%;height:200px;object-fit:cover;display:block}
+    .project .meta{padding:14px}
+    .project h3{font-size:16px;margin-bottom:6px}
+    .project p{color:#666;font-size:14px}
+    .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;border-radius:999px;padding:6px 8px;background:#f3f6ff;border:1px solid #e6ecff}
+
+    /* ---------- ABOUT + SKILLS ---------- */
+    .about{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-bottom:40px}
+    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(15,15,15,0.04)}
+    .skills{display:flex;flex-direction:column;gap:8px}
+    .skill{display:flex;justify-content:space-between;font-size:14px}
+    .skill .bar{width:60%;height:8px;border-radius:999px;background:#eee;margin-left:12px}
+    .skill .bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#6b8ef1,#ef6b9a)}
+
+    /* ---------- FOOTER ---------- */
+    footer{display:flex;justify-content:space-between;align-items:center;padding-top:22px}
+    .socials a{margin-left:10px;text-decoration:none;color:#666}
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:1000px){
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .hero{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      body{padding:18px}
+      .projects{grid-template-columns:1fr}
+      .logo{width:48px;height:48px}
+      .hero-left h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div class="name">Your Name</div>
+          <div style="color:#777;font-size:13px">Graphic Designer — Visual Identity & Branding</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Design that tells a story — clean, bold, and functional.</h1>
+        <p>I'm a multidisciplinary graphic designer focused on branding, packaging, and digital product visuals. I help startups and creators build a confident visual voice.</p>
+        <div class="cta">
+          <button class="btn btn-primary">Download CV</button>
+          <button class="btn btn-ghost">View Case Studies</button>
+        </div>
+      </div>
+
+      <aside class="stats">
+        <div class="row"><div>
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Projects</div>
+        </div><div>
+          <div class="stat-num">8</div>
+          <div class="stat-label">Years Exp</div>
+        </div></div>
+        <div style="margin-top:12px;color:#444">Selected clients</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <div style="background:#f6f7fb;padding:8px 10px;border-radius:8px;font-size:13px">CafeCo</div>
+          <div style="background:#f6f7fb;padding:8px 10px;border-radius:8px;font-size:13px">Mint Studio</div>
+          <div style="background:#f6f7fb;padding:8px 10px;border-radius:8px;font-size:13px">Paperbag</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects">
+      <h2 style="font-family:'Playfair Display',serif;margin-bottom:12px">Selected Work</h2>
+      <div class="projects">
+        <article class="project">
+          <img src="https://source.unsplash.com/collection/190727/800x600" alt="Project image">
+          <div class="meta">
+            <h3>Brand Identity — CafeCo</h3>
+            <p>Full identity system including logo, packaging, and social graphics for a specialty coffee shop.</p>
+            <div class="tags"><span class="tag">Branding</span><span class="tag">Packaging</span><span class="tag">Art Direction</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://source.unsplash.com/collection/1127163/800x600" alt="Project image">
+          <div class="meta">
+            <h3>Packaging — Herbal Tea</h3>
+            <p>Minimal, eco-friendly packaging concept for a small tea label focused on sustainability.</p>
+            <div class="tags"><span class="tag">Packaging</span><span class="tag">Print</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://source.unsplash.com/collection/888146/800x600" alt="Project image">
+          <div class="meta">
+            <h3>Poster Series — Event Campaign</h3>
+            <p>Bold typography-led posters used across posters, banners, and web hero headers.</p>
+            <div class="tags"><span class="tag">Typography</span><span class="tag">Campaign</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://source.unsplash.com/collection/1163637/800x600" alt="Project image">
+          <div class="meta">
+            <h3>UI Illustrations — App Concept</h3>
+            <p>Custom illustration set and UI assets for an onboarding experience.</p>
+            <div class="tags"><span class="tag">Illustration</span><span class="tag">UI</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://source.unsplash.com/collection/827743/800x600" alt="Project image">
+          <div class="meta">
+            <h3>Merch Design — Pop-up Shop</h3>
+            <p>Product mockups and print-ready files for a limited merch line sold at pop-ups.</p>
+            <div class="tags"><span class="tag">Merch</span><span class="tag">Mockups</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://source.unsplash.com/collection/357786/800x600" alt="Project image">
+          <div class="meta">
+            <h3>Editorial — Magazine Layout</h3>
+            <p>Clean editorial layouts with considered typographic hierarchy and grids.</p>
+            <div class="tags"><span class="tag">Editorial</span><span class="tag">Layout</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="card">
+        <h3 style="margin-bottom:10px">About me</h3>
+        <p style="color:#555;margin-bottom:12px">I’m a designer with a passion for creating visual systems that communicate clearly and delight users. My work spans visual identity, packaging, and digital product graphics. I enjoy collaborating with founders and teams to translate strategy into memorable design.</p>
+        <p style="font-weight:600;margin-bottom:8px">Tools I use</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div style="background:#f3f4f6;padding:6px 10px;border-radius:8px">Figma</div>
+          <div style="background:#f3f4f6;padding:6px 10px;border-radius:8px">Adobe Illustrator</div>
+          <div style="background:#f3f4f6;padding:6px 10px;border-radius:8px">Photoshop</div>
+          <div style="background:#f3f4f6;padding:6px 10px;border-radius:8px">After Effects</div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h4 style="margin-bottom:10px">Skills</h4>
+        <div class="skills">
+          <div class="skill">Branding<div style="display:flex;align-items:center"><div class="bar" aria-hidden><i style="width:88%"></i></div></div></div>
+          <div class="skill">Packaging<div style="display:flex;align-items:center"><div class="bar" aria-hidden><i style="width:78%"></i></div></div></div>
+          <div class="skill">Typography<div style="display:flex;align-items:center"><div class="bar" aria-hidden><i style="width:92%"></i></div></div></div>
+          <div class="skill">Illustration<div style="display:flex;align-items:center"><div class="bar" aria-hidden><i style="width:66%"></i></div></div></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="contact" class="card" style="margin-bottom:28px">
+      <h3 style="margin-bottom:10px">Let’s work together</h3>
+      <p style="color:#555;margin-bottom:12px">Available for freelance and contract work. Interested in collaborating? Send a brief message and I’ll reply within a few days.</p>
+      <form style="display:flex;gap:8px;flex-wrap:wrap">
+        <input type="text" placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee">
+        <input type="email" placeholder="Email" style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee">
+        <textarea placeholder="Project brief" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;min-height:100px"></textarea>
+        <button class="btn btn-primary" type="submit">Send message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div style="color:#666">© 2025 Your Name</div>
+      <div class="socials">
+        <a href="#">Dribbble</a>
+        <a href="#">Behance</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
